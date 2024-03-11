@@ -1,0 +1,15 @@
+{% extends 'website/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+    post
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+
+    {% csrf_token %}{{ form | crispy }}
+    <p><a href="/home"> Goto Home</a></p>
+    <button type="submit" class="btn btn-success">Create Post</button>
+    </form>
+
+{% endblock %}
